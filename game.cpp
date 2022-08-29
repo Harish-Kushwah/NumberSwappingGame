@@ -162,9 +162,9 @@ void Interface::rules()
 {
     line();
     cout<<"------[ RULES ]----\n\n";
-    yellow(); //yellow color
+    yellow(); 
     cout<<"____[ How to play game  ]_____\n";
-    gray();//gray color
+    gray();
     cout<<"  * Their is square matrix is given to you \n ";
     cout<<" * You have to convert int into win matrix \n";
     cout<<"  * You have limited amount of moves\n";
@@ -194,13 +194,14 @@ void Interface::help()
     
 
 }
+//gives the intro to the user
 int Interface::intro()
 {
     char ch;
     line();
-    lightBlue(); //sets light blue color
+    lightBlue();
     cout<<" ___________[  ";
-    lightGreen();//sets light green color
+    lightGreen();
     cout<<"WELCOME IN NUMBER SWAPPING GAME ";
     lightBlue();
     cout<<" ]___________ \n";
@@ -314,11 +315,15 @@ void NumberSwap::play()
     switch(key)
     {
         case 101: //ascii of e
-        cout<<"Thnanks for playing :";
+        lightPurple();
+        cout<<"Thnanks for playing ";
+        white();
         flag=1;
         break;
         case 69: //ascii of E
+        lightPurple();
         cout<<"Thanks for playing";
+        white();
         flag=1;
         break;
         case KEY_LEFT: //left <-
@@ -345,17 +350,17 @@ void NumberSwap::play()
         system("cls");
         show();
         break;
-        case 115://ASCII s 
+        case 115:      //ASCII s 
         checkMatrix();
         break;
-        case 104://ASCII h
+        case 104:      //ASCII h
         help();
         break;
-        case 114://ASCII e
+        case 114:      //ASCII e
         cout<<endl;
         rules();
         break;
-        case 99: //ASCII c
+        case 99:         //ASCII c
         system("cls");
         show();
         break;
@@ -444,7 +449,7 @@ for(int i=0;i<n;i++){
     }
     cout<<endl;
 }
-//
+//generates unique number
 int NumberSwap::unqNum(int in)
 {
     
@@ -491,8 +496,6 @@ void NumberSwap::generateMatrix()
 //show the matrix
 void NumberSwap::showMatrix(int arr[][5])
 {
-    //generateMatrix(n,m);
-   //prints the matrix
    cout<<endl;
      line1(m);
     for(int i=0;i<n;i++){
@@ -513,19 +516,19 @@ void NumberSwap::showMatrix(int arr[][5])
    }
    line1(m);
 }  
-
+//start the game
 void NumberSwap::start()
 {
     char choise;
     white();
-    cout<<"Enter[Y/y] to start game :";
+    cout<<"Enter[Y/N] to start game :";
     cin>>choise;
     if(choise=='Y'||choise=='y'){
     system("cls");
     play();
     }
     else{
-        cout<<"Have a nice day :";
+        cout<<"Have a nice day ";
         exit(0);
     }
 
@@ -535,7 +538,7 @@ int main()
    NumberSwap n1;
    Interface i1;
     n1.setDim(4,4); //sets 4X4 matrix
-    n1.setMove(100); //toatal 100 moves
+    n1.setMove(100); //total 100 moves
     n1.frontPage();
     n1.start();
     return 0;
