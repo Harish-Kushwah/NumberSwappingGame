@@ -1,15 +1,14 @@
-#include<bits/stdc++.h>
 #include<iostream>
 #include<conio.h>
 #include<windows.h>
-#include<strings.h>
+#include<string.h>
 using namespace std;
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
 
-//standerd function to user colors in text
+//Standard function to user colors in text
 HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);
 
 //contains various colors
@@ -80,7 +79,7 @@ class User:public color
 class Interface:public User
 {
     public:
-    void frontPage();   //shows the containt on front page
+    void frontPage();   //shows the contain on front page
     void rules();       //shows all rules of the game
     void line();        //print long line
     void help();        //shows many other command of game
@@ -92,23 +91,23 @@ class NumberSwap:public Interface
     private:
     int arr[5][5];       //generated matrix;
     int n,m;             //dimension of matrix
-    int win[5][5],move;  //wining matix 
+    int win[5][5],move;  //wining matrix 
     public:
     void setDim(int row,int col){ n=row; m=col;} //sets the dimension of matrix
     void generateMatrix();                       //generates the matrix
-    void showMatrix(int arr[][5]);               //print the matix in boxes
+    void showMatrix(int arr[][5]);               //print the matrix in boxes
     int count(int);                              //counts the number of digits in number
-    void line1(int );                            //print line between num in matix
-    void winMatrix();                            //generate the wining matix
-    void checkMatrix();                          //check whether the matix is equal to wining matrix
-    void play();                                 //contanins all actions required for play the game
-    void right();                                //moves empt space to right
-    void upp();                                  //moves empt space to upp
-    void down();                                 //moves empt space to down
-    void left();                                 //moves empt space to left
-    int indexRow();                              //returns the row index of empt space
-    int indexCol();                              //returns thr column index of empt sapce
-    void statusBar();                            //prints satus bar 
+    void line1(int );                            //print line between num in matrix
+    void winMatrix();                            //generate the wining matrix
+    void checkMatrix();                          //check whether the matrix is equal to wining matrix
+    void play();                                 //contains all actions required for play the game
+    void right();                                //moves empty space to right
+    void upp();                                  //moves empty space to upp
+    void down();                                 //moves empty space to down
+    void left();                                 //moves empty space to left
+    int indexRow();                              //returns the row index of empty space
+    int indexCol();                              //returns thr column index of empty space
+    void statusBar();                            //prints status bar 
     void show();                                 //shows the interface while playing
     void start();                                //starts the game
     int unqNum(int);                             //generate unique number
@@ -169,12 +168,12 @@ void Interface::rules()
     cout<<" * You have to convert int into win matrix \n";
     cout<<"  * You have limited amount of moves\n";
     yellow();
-    cout<<"__[  How to tranform matrix  ]__\n";
+    cout<<"__[  How to transformed matrix  ]__\n";
     gray();
-    cout<<"  - press [RIGHT] ARROW to move sapce to right \n";
-    cout<<"  - press [LEFT ] ARROW to move sapce to left \n";
-    cout<<"  - press [UPP  ] ARROW to move sapce to upp \n";
-    cout<<"  - press [DOWN ] ARROW to move sapce to down \n";
+    cout<<"  - press [RIGHT] ARROW to move space to right \n";
+    cout<<"  - press [LEFT ] ARROW to move space to left \n";
+    cout<<"  - press [UPP  ] ARROW to move space to upp \n";
+    cout<<"  - press [DOWN ] ARROW to move space to down \n";
     line();
     brightWhite();
 
@@ -211,10 +210,10 @@ int Interface::intro()
     yellow();
     cout<<"   1] THINKING POWER INCREASES \n";
     cout<<"   2] IMPROVE DECISION MAKING SKILL\n";
-    cout<<"   3] HELPS TO BULID LOGIC\n";
+    cout<<"   3] HELPS TO BUILD LOGIC\n";
     white();
     cout<<"\n  LET'S PLAY..!\n";
-    cout<<"ENTR [Y/y] to move forward :";
+    cout<<"ENTER [Y/y] to move forward :";
     cin>>ch;
     if(ch=='y'||ch=='Y')
     return 1;
@@ -272,7 +271,7 @@ void NumberSwap::right()
     else
     cout<<"Sorry we can't perform "<<endl;
 }
-//move sapce to left
+//move space to left
 void NumberSwap::left()
 {
     int i=indexRow();
@@ -316,7 +315,7 @@ void NumberSwap::play()
     {
         case 101: //ascii of e
         lightPurple();
-        cout<<"Thnanks for playing ";
+        cout<<"Thanks for playing ";
         white();
         flag=1;
         break;
@@ -365,7 +364,7 @@ void NumberSwap::play()
         show();
         break;
         default:
-        cout<<"Enter a valid choise ";
+        cout<<"Enter a valid choice ";
 
     }
     if(flag==1)
@@ -453,7 +452,7 @@ for(int i=0;i<n;i++){
 int NumberSwap::unqNum(int in)
 {
     
-    srand(time(NULL));
+    srand(0);
     int size=n*m;
     int numarr[size+1];
     int hash[size+1];
@@ -519,11 +518,11 @@ void NumberSwap::showMatrix(int arr[][5])
 //start the game
 void NumberSwap::start()
 {
-    char choise;
+    char choice;
     white();
     cout<<"Enter[Y/N] to start game :";
-    cin>>choise;
-    if(choise=='Y'||choise=='y'){
+    cin>>choice;
+    if(choice=='Y'||choice=='y'){
     system("cls");
     play();
     }
