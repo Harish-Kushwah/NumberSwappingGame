@@ -22,12 +22,15 @@ This is a console-based number swapping game implemented in C++. The objective o
 Here are some screenshots that demonstrate the gameplay and output of the number swapping game:
 
 ![Screenshot 1](Screenshot/welcomepage.png)
+
 This is welcome page when first time game launch 
 
 ![Screenshot 2](Screenshot/rulespage.png)
+
 Enter your name and read all the rules 
 
 ![Screenshot 3](Screenshot/gamingpage.png)
+
 This is main page of the game you have 100 move to create winning matrix 
 
 
